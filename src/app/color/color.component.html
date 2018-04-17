@@ -1,0 +1,13 @@
+<div [style.background-color]="color" >
+
+  Color
+
+</div>
+
+<input type="text" [(ngModel)]="twoway">
+
+{{twoway}}
+
+<input type="text" #couleur (change)="changerColor(couleur.value)">
+
+<button (click)="makeDefaultColor()">Default Color</button>

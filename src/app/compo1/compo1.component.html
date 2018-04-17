@@ -1,0 +1,8 @@
+<p (click)="showMessage(monInput.value)" [align]="alignement">
+  compo1 works!
+</p>
+<input type="text" #monInput>
+test : {{test}}
+
+<app-compo2 (incrementEvent)="afficheCompteur($event)" [test]="alignement"></app-compo2>
+Value de mon fils : {{filsValue}}
