@@ -1,5 +1,6 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Personne} from "../Model/Personne";
+import {PersonneService} from "../personne.service";
 
 @Component({
   selector: 'app-list',
@@ -9,17 +10,14 @@ import {Personne} from "../Model/Personne";
 export class ListComponent implements OnInit {
 
   @Input() personnes : Personne[];
-  constructor() { }
-  @Output() envoiPersonne = new EventEmitter();
+  constructor(private personneService: PersonneService) { }
+
   ngOnInit() {
   }
 
-  getSentPersonne(event){
-    console.log('je suis dans list',event);
-    this.envoiPersonne.emit({
-        personne : event.personne
-    }
-    )
+  selectPersonne(personne : Personne){
+    console.log('cc');
+    this.personneService.setSelectedPersonne(personne);
   }
 
 }

@@ -13,6 +13,16 @@ import { CvComponent } from './cv/cv.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
 import { DetailsComponent } from './details/details.component';
+import { StyleComponent } from './style/style.component';
+import { HighlightDirective } from './highlight.directive';
+import { RainbowDirective } from './rainbow.directive';
+
+//Mes services
+import {TodoService} from "./todo.service";
+import { TodolistComponent } from './todolist/todolist.component';
+import {PersonneService} from "./personne.service";
+import { FormulaireComponent } from './formulaire/formulaire.component';
+import { HttpComponent } from './http/http.component';
 
 @NgModule({
   declarations: [
@@ -25,14 +35,20 @@ import { DetailsComponent } from './details/details.component';
     CvComponent,
     ListComponent,
     ItemComponent,
-    DetailsComponent
+    DetailsComponent,
+    StyleComponent,
+    HighlightDirective,
+    RainbowDirective,
+    TodolistComponent,
+    FormulaireComponent,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [TodoService,PersonneService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Personne} from "../Model/Personne";
+import {PersonneService} from "../personne.service";
 
 @Component({
   selector: 'app-details',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  selectedPersonne : Personne = null;
+  constructor(public personneService:PersonneService) {
+  }
 
   ngOnInit() {
+    this.personneService.selectedPersonne.subscribe(
+      (personne:Personne)=>{
+        this.selectedPersonne=personne
+      }
+    )
   }
 
 }

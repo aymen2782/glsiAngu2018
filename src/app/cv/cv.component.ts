@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Personne} from "../Model/Personne";
+import {TodoService} from "../todo.service";
+import {PersonneService} from "../personne.service";
 
 @Component({
   selector: 'app-cv',
@@ -9,13 +11,11 @@ import {Personne} from "../Model/Personne";
 export class CvComponent implements OnInit {
 
   personnes : Personne [];
-  constructor() { }
+  constructor(private todoService:TodoService, private personneService:PersonneService) { }
 
   ngOnInit() {
-    this.personnes = [
-      new Personne('sellaouti','aymen',35, 'as.jpg'),
-      new Personne('sellaouti2','aymen2',25, 'as.jpg'),
-    ];
+    this.personnes = this.personneService.getPersonnes();
+    this.todoService.logImHere();
   }
 
 }
