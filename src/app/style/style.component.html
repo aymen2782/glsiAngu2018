@@ -1,0 +1,17 @@
+<input type="text" value="{{color}}">
+
+<select #myselect name="" id="" (change)="changeFont(myselect)">
+  <option value="verdana">verdana</option>
+  <option value="garamond">garamond</option>
+  <option value="courrier new">courrier new</option>
+</select>
+
+<input #taille type="number"  (change)="changeTaille(taille.value)">
+
+<p appHighlight [ngStyle]="{'color': color, 'font-size': size, 'font-family': myFont}">
+  style works!
+</p>
+
+<p *ngIf="show" appHighlight > test highlight</p>
+
+<button (click)="affiche()">Afficher</button>

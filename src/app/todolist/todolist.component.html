@@ -1,0 +1,10 @@
+<div *ngIf="add">
+  Todo :
+  <input class="form-control" #cle type="text">
+  <input class="form-control" #valeur type="text">
+  <button class="btn btn-primary" (click)="addTodo(cle.value,valeur.value)">Add Todo</button>
+</div>
+<button class="btn btn-primary" *ngIf="!add" (click)="showAddTodo()">Ajouter Todo</button>
+<ul class="list-group">
+  <li *ngFor="let todo of todos">{{todo.cle}} : {{todo.valeur}} <button class="btn btn-danger" (click)="deleteTodo(todo)">Delete</button></li>
+</ul>

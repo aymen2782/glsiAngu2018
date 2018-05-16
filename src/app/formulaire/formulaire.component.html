@@ -1,0 +1,12 @@
+<p>
+  formulaire works!
+</p>
+<hr>
+
+<form (submit)="formSubmit(formulaire)" #formulaire="ngForm">
+  Nom <input class="form-control" required type="text" ngModel name="nom">
+  prenom <input class="form-control" type="text" ngModel name="prenom">
+  Age <input class="form-control" type="number" ngModel name="age">
+  Path <input class="form-control" type="text" ngModel name="path">
+  <input type="submit" value="Envoyer" [disabled]="!formulaire.valid">
+</form>
